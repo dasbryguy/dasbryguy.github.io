@@ -71,14 +71,24 @@ body {
             transform: rotate(360deg);
   }
 }
+
+#main {
+  display: none;
+}
 </style>
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="jquery.cookie.js"></script>
 <script>
-  $.getJSON('settings.json', function (data) {
-    $('body').html(data.loading);
-  });
+  setTimeout(function () {
+    $('.loader')remove();
+  }, 3000);
+  $('#main').show();
 </script>
 </head>
-<body></body>
+<body>
+  <div class="loader"></div>
+  <div id="main">
+    
+  </div>
+</body>
 </html>

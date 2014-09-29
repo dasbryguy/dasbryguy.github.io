@@ -79,10 +79,14 @@ body {
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="jquery.cookie.js"></script>
 <script>
+var main = function () {
   setTimeout(function () {
     $('.loader')remove();
   }, 3000);
   $('#main').show();
+};
+
+$(document).read(main);
 </script>
 </head>
 <body>

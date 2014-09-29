@@ -42,8 +42,10 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  background: -webkit-linear-gradient(lightblue, black 60%);
   background: linear-gradient(lightblue, black 60%);
-  animation: spin .5s infinite linear;
+  -webkit-animation: spin .5s infinite linear;
+          animation: spin .5s infinite linear;
 }
 .loader:after {
   content: "";
@@ -57,9 +59,17 @@ body {
   box-shadow: inset 0 0 5px #444;
 }
 
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @keyframes spin {
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 </style>

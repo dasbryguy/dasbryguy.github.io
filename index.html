@@ -107,14 +107,21 @@ body {
 <script>
 var r = Math.floor((Math.random() * 5)) * 1000;
 var main = function () {
-  setTimeout(function () {
-    $(".loader").fadeOut(300, function() {
-      $(this).remove();
-    });
+  if (!$.cookie('visited')) {
     setTimeout(function () {
-      $('#main').fadeIn(300);
-    }, 301);
-  }, r);
+      $('.loader').fadeOut(300, function() {
+        $(this).remove();
+      });
+      setTimeout(function () {
+        $('#main').fadeIn(300);
+      }, 301);
+      $.cookie('visited', 'true');
+    }, r);
+  }
+  else {
+    $('.loader').remove();
+    $('#main').fadeIn(300);
+  }
 };
 
 $(document).ready(main);

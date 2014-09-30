@@ -106,6 +106,7 @@ body {
 <script src="res/jquery.cookie.js"></script>
 <script>
 var main = function () {
+  var r = Math.floor((Math.random() * 5));
   setTimeout(function () {
     $(".loader").fadeOut(300, function() {
       $(this).remove();
@@ -113,14 +114,14 @@ var main = function () {
     setTimeout(function () {
       $('#main').fadeIn(300);
     }, 301);
-  }, 3000);
+  }, r);
 };
 
 $(document).ready(main);
 </script>
 </head>
 <body>
-  <div class="container"><div class="loader"><p>Miner</p></div></div>
+  <div class="container"><div class="loader"><img src="https://avatars2.githubusercontent.com/u/8951421?v=2&s=40" /></div></div>
   <div id="main">
     <p>Hi</p>
   </div>

@@ -105,9 +105,10 @@ var main = function () {
   setTimeout(function () {
     $(".loader").fadeOut(300, function() {
       $(this).remove();
-    }, function () {
-      $('#main').fadeIn(300);
     });
+    setTimeout(function () {
+      $('#main').fadeIn(300);
+    }, 301);
   }, 3000);
 };
 
